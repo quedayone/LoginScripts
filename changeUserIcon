@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#### Information - Change the logged in users icon to CM square icon.
+#### Information - Change the logged in users icon to XX square icon.
 #### Run at login.
 #### Be sure icon is on computer!
 #### https://jamfnation.jamfsoftware.com/discussion.html?id=4332&postid=47631
@@ -11,15 +11,15 @@
 user=`ls -l /dev/console | cut -d " " -f 4`
 
 # Check fore CM_Square.png
-echo Checking for Check fore CM_Square.png.....
-if [ -f /Library/User\ Pictures/CM_Square.png ]; then
+echo Checking for Check fore XX_Square.png.....
+if [ -f /Library/User\ Pictures/XX_Square.png ]; then
 
-echo found CM_Square.png changeing user icon
+echo found XX_Square.png changeing user icon
 
 dscl . delete /Users/$user jpegphoto
 dscl . delete /Users/$user Picture
-dscl . create /Users/$user Picture "/Library/User Pictures/CM_Square.png"
+dscl . create /Users/$user Picture "/Library/User Pictures/XX_Square.png"
 else
-echo CM_Square.png not found.
+echo XX_Square.png not found.
 fi
 exit 0
